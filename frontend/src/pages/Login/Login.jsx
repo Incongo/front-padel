@@ -35,10 +35,16 @@ function Login() {
         }
     }
 
-
     return (
         <div className={styles.container}>
             <form className={styles.card} onSubmit={handleSubmit}>
+
+                {/* Encabezado dentro de la tarjeta */}
+                <div className={styles.header}>
+                    <h1>PadelApp</h1>
+                    <p>Reserva. Juega. Disfruta.</p>
+                </div>
+
                 <h2>Iniciar sesión</h2>
 
                 {error && <p className={styles.error}>{error}</p>}

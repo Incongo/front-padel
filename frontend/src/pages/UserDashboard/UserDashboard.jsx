@@ -1,8 +1,16 @@
+// src/pages/UserDashboard/UserDashboard.jsx
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { getMisReservasRequest } from "../../api/apiClient";
 import styles from "./UserDashboard.module.css";
+
+// Función para parsear fechas dd/mm/yyyy
+function parseFecha(fechaStr) {
+    const [dia, mes, año] = fechaStr.split("/");
+    return new Date(`${año}-${mes}-${dia}`);
+}
 
 function UserDashboard() {
     const { user } = useAuth();
@@ -10,8 +18,17 @@ function UserDashboard() {
 
     useEffect(() => {
         getMisReservasRequest().then((data) => {
-            const futuras = data.filter(r => new Date(r.fecha) >= new Date());
-            setProximas(futuras.slice(0, 3)); // solo 3 próximas
+
+            const futuras = data
+                .map(r => ({
+                    ...r,
+                    fechaObj: parseFecha(r.fecha)
+                }))
+                .filter(r => r.fechaObj >= new Date())
+                .sort((a, b) => a.fechaObj - b.fechaObj)
+                .slice(0, 3);
+
+            setProximas(futuras);
         });
     }, []);
 
@@ -41,14 +58,16 @@ function UserDashboard() {
                     <p className={styles.noData}>No tienes reservas próximas</p>
                 )}
 
-                {proximas.map((r) => (
-                    <div key={r.id} className={styles.reservaCard}>
-                        <h4>{r.pista}</h4>
-                        <p><strong>Fecha:</strong> {r.fecha}</p>
-                        <p><strong>Horas:</strong> {r.horarios.join(", ")}</p>
-                        <p><strong>Total:</strong> {r.precio_total} €</p>
-                    </div>
-                ))}
+                <div className={styles.reservasGrid}>
+                    {proximas.map((r) => (
+                        <div key={r.id} className={styles.reservaCard}>
+                            <h4>{r.pista}</h4>
+                            <p><strong>Fecha:</strong> {r.fecha}</p>
+                            <p><strong>Horas:</strong> {r.horarios.join(", ")}</p>
+                            <p><strong>Total:</strong> {r.precio_total} €</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

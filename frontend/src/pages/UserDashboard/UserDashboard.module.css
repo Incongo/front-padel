@@ -93,3 +93,21 @@
         flex: 1;
     }
 }
+
+@media (min-width: 900px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .section>div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .reservaCard {
+        margin-bottom: 0;
+    }
+}
