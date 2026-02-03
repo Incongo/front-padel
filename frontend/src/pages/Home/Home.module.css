@@ -1,0 +1,36 @@
+/* src/pages/Home/Home.module.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eef1f5;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logoutBtn {
+    margin-top: 20px;
+    background: #d9534f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #c9302c;
+}

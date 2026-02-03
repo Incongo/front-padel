@@ -1,0 +1,182 @@
+/* CONTENEDOR GENERAL */
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* FILTROS SUPERIORES */
+.filtros {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fechaPill {
+    background: linear-gradient(to right, #64a2fc, #71709e);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.fechaPill:hover {
+    transform: scale(1.05);
+}
+
+.fechaHidden {
+    display: none;
+}
+
+.franjaSelect {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #9ea3b2;
+    background: white;
+    font-size: 14px;
+    color: #2c3457;
+}
+
+/* LISTA DE PISTAS */
+.listaPistas {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* TARJETA DE PISTA */
+.pistaCard {
+    width: 90%;
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #64a2fc;
+    margin-bottom: 10px;
+}
+
+.pistaImg {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.pistaInfo h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #2c3457;
+}
+
+.pistaInfo p {
+    margin: 4px 0 12px 0;
+    color: #71709e;
+    font-size: 14px;
+}
+
+/* CARRUSEL DE HORAS */
+.carrusel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+.horaItem {
+    background: #9ea3b2;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.horaItem:hover {
+    background: #71709e;
+    transform: scale(1.05);
+}
+
+/* SELECCIÓN DE HORA */
+.horaSeleccionada {
+    background: linear-gradient(to right, #afd024, #98ba0b) !important;
+    color: #2c3457 !important;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(175, 208, 36, 0.6);
+}
+
+/* SIN DISPONIBILIDAD */
+.noDisp {
+    color: #9ea3b2;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* BARRA INFERIOR */
+.barraReserva {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #64a2fc, #71709e);
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.resumenReserva span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btnReservar {
+    background: white;
+    color: #2c3457;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btnReservar:hover {
+    background: #afd024;
+    color: #2c3457;
+}
+
+/* GRID EN ESCRITORIO */
+@media (min-width: 900px) {
+    .listaPistas {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .pistaCard {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 29%;
+        margin: 10px 3px 10px 3px;
+    }
+
+    .pistaImg {
+        height: 180px;
+    }
+}

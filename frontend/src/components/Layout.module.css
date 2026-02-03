@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f7fa;
+}
+
+.header {
+    background: linear-gradient(to right, #64a2fc, #71709e);
+    padding: 14px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.2s ease;
+}
+
+.links a:hover {
+    transform: scale(1.05);
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.userBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.userName {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logoutBtn {
+    background: white;
+    color: #2c3457;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.logoutBtn:hover {
+    background: #9ea3b2;
+    color: white;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+    background: #f5f7fa;
+}
+
+.footer {
+    background: #2c3457;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #9ea3b2;
+}

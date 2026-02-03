@@ -1,0 +1,95 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #2c3457;
+}
+
+.subtitulo {
+    color: #71709e;
+    margin-top: -6px;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.quickActions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.actionCard {
+    background: linear-gradient(to right, #afd024, #98ba0b);
+    color: #2c3457;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.actionCard:hover {
+    transform: scale(1.02);
+}
+
+.actionCard h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.actionCard p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3457;
+}
+
+.section h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #64a2fc;
+}
+
+.noData {
+    color: #9ea3b2;
+    font-size: 14px;
+}
+
+.reservaCard {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    margin-bottom: 12px;
+    border-left: 6px solid #64a2fc;
+}
+
+.reservaCard h4 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    color: #2c3457;
+}
+
+.reservaCard p {
+    margin: 3px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .quickActions {
+        flex-direction: row;
+    }
+
+    .actionCard {
+        flex: 1;
+    }
+}
