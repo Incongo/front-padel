@@ -46,8 +46,27 @@ function Reservas() {
 
     function filtrarPorFranja(lista) {
         const [inicio, fin] = franja.split("-");
-        return lista.filter((h) => h.franja >= inicio && h.franja <= fin);
+
+        const hoy = new Date().toISOString().split("T")[0];
+        const esHoy = fecha === hoy;
+
+        const horaActual = new Date().getHours();
+
+        return lista.filter((h) => {
+            const horaSlot = parseInt(h.franja.split(":")[0]);
+
+            // Filtrar por franja seleccionada
+            const dentroFranja = h.franja >= inicio && h.franja <= fin;
+
+            if (!dentroFranja) return false;
+
+            // Si es hoy, ocultar horas pasadas
+            if (esHoy && horaSlot < horaActual) return false;
+
+            return true;
+        });
     }
+
 
     function toggleSlot(hora, pista) {
         if (!pistaSeleccionada || pistaSeleccionada.id !== pista.id) {
@@ -115,8 +134,10 @@ function Reservas() {
                     type="date"
                     className={styles.fechaHidden}
                     value={fecha}
+                    min={new Date().toISOString().split("T")[0]}
                     onChange={(e) => setFecha(e.target.value)}
                 />
+
 
                 <select
                     className={styles.franjaSelect}

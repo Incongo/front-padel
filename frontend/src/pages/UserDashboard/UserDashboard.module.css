@@ -111,3 +111,15 @@
         margin-bottom: 0;
     }
 }
+
+/* Evitar que el contenido empuje el header hacia abajo */
+.layout h1,
+.layout h2,
+.layout h3,
+.layout p {
+    margin-top: 0;
+}
+
+.titulo {
+    margin-top: 0;
+}

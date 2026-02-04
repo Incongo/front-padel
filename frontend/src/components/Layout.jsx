@@ -16,18 +16,34 @@ function Layout() {
         <div className={styles.container}>
             <header className={styles.header}>
                 <nav className={styles.nav}>
-                    <div className={styles.links}>
-                        <Link to="/user" className={pathname === "/user" ? styles.active : ""}>Inicio</Link>
-                        <Link to="/user/reservas" className={pathname === "/user/reservas" ? styles.active : ""}>Reservar</Link>
-                        <Link to="/user/mis-reservas" className={pathname === "/user/mis-reservas" ? styles.active : ""}>Mis reservas</Link>
+
+                    {/* LOGO IZQUIERDA */}
+                    <Link to="/" className={styles.logo}>
+                        PadelApp
+                    </Link>
+
+
+                    {/* MENÚ DERECHA */}
+                    <div className={styles.userArea}>
+                        <span className={styles.userName}>{user?.nombre}</span>
+
+                        <div className={styles.userMenu}>
+                            <button className={styles.userButton}>Menú</button>
+
+                            <div className={styles.dropdown}>
+                                <p className={styles.dropdownName}>{user?.nombre}</p>
+                                <Link to="/user">Inicio</Link>
+                                <Link to="/user/reservas">Reservar</Link>
+                                <Link to="/user/mis-reservas">Mis reservas</Link>
+                                <button className={styles.logoutBtn} onClick={handleLogout}>Salir</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className={styles.userBox}>
-                        <span className={styles.userName}>{user?.nombre}</span>
-                        <button className={styles.logoutBtn} onClick={handleLogout}>Salir</button>
-                    </div>
+
                 </nav>
             </header>
+
 
             <main className={styles.main}>
                 <Outlet />

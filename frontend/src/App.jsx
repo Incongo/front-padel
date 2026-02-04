@@ -7,11 +7,24 @@ import RoleRoute from "./components/RoleRoute";
 import Reservas from "./pages/Reservas/Reservas";
 import MisReservas from "./pages/MisReservas/MisReservas";
 import Layout from "./components/Layout";
+import PublicRoute from "./components/PublicRoute";
+import Home from "./pages/Home/Home";
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* HOME PÚBLICA */}
+        <Route
+          path="/"
+          element={
+            <PublicRoute>
+              <Home />
+            </PublicRoute>
+          }
+        />
 
         {/* PÚBLICAS */}
         <Route path="/login" element={<Login />} />
@@ -42,6 +55,7 @@ function App() {
         />
 
       </Routes>
+
     </BrowserRouter>
   );
 }

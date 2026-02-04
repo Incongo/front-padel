@@ -1,78 +1,100 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: "Segoe UI", sans-serif;
-    background: #f5f7fa;
-}
-
+/* HEADER */
 .header {
     background: linear-gradient(to right, #64a2fc, #71709e);
     padding: 14px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
+    /* NUEVO */
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.links {
-    display: flex;
-    gap: 24px;
-}
-
-.links a {
+/* LOGO */
+.logo {
+    font-size: 22px;
+    font-weight: 800;
     color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: transform 0.2s ease;
+    letter-spacing: -0.5px;
 }
 
-.links a:hover {
-    transform: scale(1.05);
+/* MENÚ USUARIO */
+.userMenu {
+    position: relative;
 }
 
-.active {
-    text-decoration: underline;
-}
-
-.userBox {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.userName {
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.logoutBtn {
+.userButton {
     background: white;
     color: #2c3457;
     border: none;
-    padding: 6px 14px;
+    padding: 8px 14px;
     border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    /* se pega justo debajo del botón */
+    margin-top: 6px;
+    /* separación suave sin romper el hover */
+    background: white;
+    color: #2c3457;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 180px;
+    z-index: 10;
+}
+
+.userMenu:hover .dropdown {
+    display: flex;
+}
+
+
+.dropdownName {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.dropdownLink {
+    text-decoration: none;
+    color: #2c3457;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+.dropdownLink:hover {
+    color: #64a2fc;
+}
+
+/* BOTÓN SALIR */
+.logoutBtn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 6px;
 }
 
 .logoutBtn:hover {
-    background: #9ea3b2;
-    color: white;
-}
-
-.main {
-    flex: 1;
-    padding: 20px;
-    background: #f5f7fa;
+    background: #d93636;
 }
 
 .footer {
@@ -81,4 +103,40 @@
     text-align: center;
     font-size: 13px;
     color: #9ea3b2;
+    position: relative;
+    /* NUEVO */
+    z-index: 2;
+    /* NUEVO */
+}
+
+.main {
+    flex: 1 1 auto;
+    padding: 20px;
+    background: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.userMenu {
+    position: relative;
+    display: inline-block;
+    /* importante */
+}
+
+.userArea {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.userName {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
 }

@@ -8,9 +8,16 @@ import styles from "./UserDashboard.module.css";
 
 // Función para parsear fechas dd/mm/yyyy
 function parseFecha(fechaStr) {
+    // Si ya viene en formato ISO (YYYY-MM-DD)
+    if (fechaStr.includes("-")) {
+        return new Date(fechaStr);
+    }
+
+    // Si viene en formato dd/mm/yyyy
     const [dia, mes, año] = fechaStr.split("/");
     return new Date(`${año}-${mes}-${dia}`);
 }
+
 
 function UserDashboard() {
     const { user } = useAuth();

@@ -25,7 +25,15 @@
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s ease;
+
+    /* FIX para que no se haga gigante */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: fit-content;
 }
+
 
 .fechaPill:hover {
     transform: scale(1.05);
@@ -91,8 +99,8 @@
 }
 
 .horaItem {
-    background: #9ea3b2;
-    color: white;
+    background: #9ea3b2 !important;
+    color: white !important;
     border: none;
     padding: 10px 14px;
     border-radius: 10px;
@@ -152,7 +160,18 @@
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s ease;
+
+    /* FIX para evitar que se estire */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: fit-content;
+    white-space: nowrap;
 }
+
+
+
 
 .btnReservar:hover {
     background: #afd024;

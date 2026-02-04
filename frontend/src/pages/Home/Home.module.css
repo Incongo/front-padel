@@ -1,36 +1,148 @@
-/* src/pages/Home/Home.module.css */
-
-.container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #eef1f5;
-    padding: 20px;
+.home {
+    font-family: "Segoe UI", sans-serif;
 }
 
-.card {
-    background: white;
-    padding: 30px;
-    width: 100%;
-    max-width: 450px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* HERO */
+.hero {
     text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #64a2fc, #71709e);
+    color: #ffffff;
+    border-radius: 0 0 20px 20px;
 }
 
-.logoutBtn {
-    margin-top: 20px;
-    background: #d9534f;
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.ctaBtn {
+    background: #98ba0b;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* BLOQUE CON FONDO */
+.blockWithBackground {
+    background-image: url("/src/assets/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fade superior e inferior */
+.blockWithBackground::before,
+.blockWithBackground::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 140px;
+    z-index: 1;
+}
+
+.blockWithBackground::before {
+    top: 0;
+    background: linear-gradient(to bottom, #f5f7fa, transparent);
+}
+
+.blockWithBackground::after {
+    bottom: 0;
+    background: linear-gradient(to top, #f5f7fa, transparent);
+}
+
+.blockWithBackground>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* TITULOS */
+.steps h2,
+.pistas h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* GRID */
+.stepsGrid,
+.pistasGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* TARJETAS */
+.stepCard,
+.pistaCard {
+    background: #98ba0b;
+    backdrop-filter: blur(6px);
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stepCard:hover,
+.pistaCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* TITULOS DE TARJETAS */
+.stepCard h3,
+.pistaCard h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* TEXTO */
+.stepCard p,
+.pistaCard p {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+/* IMÁGENES DE PISTAS */
+.pistaCard img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* CTA FINAL */
+.finalCTA {
+    text-align: center;
+    padding: 60px 20px;
+    background: #2c3457;
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
+    margin-top: 40px;
 }
 
-.logoutBtn:hover {
-    background: #c9302c;
+.ctaBtnWhite {
+    background: white;
+    color: #2c3457;
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
 }
