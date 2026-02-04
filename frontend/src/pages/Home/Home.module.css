@@ -5,7 +5,7 @@
 /* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 10px 20px 20px;
     background: linear-gradient(to right, #64a2fc, #71709e);
     color: #ffffff;
     border-radius: 0 0 20px 20px;
@@ -14,6 +14,7 @@
 .hero h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    text-shadow: 0 5px 12px #2c3457;
 }
 
 .hero p {
@@ -30,6 +31,15 @@
     text-decoration: none;
 }
 
+.ctaBtn2 {
+    background: #98ba0b;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 /* BLOQUE CON FONDO */
 .blockWithBackground {
     background-image: url("/src/assets/fondo.jpg");
@@ -37,7 +47,7 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    padding: 120px 0;
+    padding: 20px 0;
     position: relative;
     overflow: hidden;
 }
@@ -90,18 +100,31 @@
 /* TARJETAS */
 .stepCard,
 .pistaCard {
-    background: #98ba0b;
-    backdrop-filter: blur(6px);
+    background: linear-gradient(135deg, rgba(166, 201, 41, 0.85), rgba(146, 192, 19, 0.65));
+    backdrop-filter: blur(10px);
     padding: 24px;
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    /* Sombra principal */
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.25);
+    /* halo suave */
+    position: relative;
+    overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Brillo suave detrás (halo) */
+.pistaCard::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.35), transparent 70%);
+    z-index: 0;
 }
 
 .stepCard:hover,
 .pistaCard:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), 0 0 40px rgba(255, 255, 255, 0.35);
 }
 
 /* TITULOS DE TARJETAS */
@@ -111,6 +134,12 @@
     font-weight: 700;
     margin-bottom: 10px;
     color: #ffffff;
+    text-shadow: 0 12px 32px #2c3457;
+}
+
+.pistaCard>* {
+    position: relative;
+    z-index: 1;
 }
 
 /* TEXTO */
@@ -132,10 +161,11 @@
 /* CTA FINAL */
 .finalCTA {
     text-align: center;
-    padding: 60px 20px;
+    padding: 20px 20px 20px 20px;
     background: #2c3457;
-    color: white;
-    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+
 }
 
 .ctaBtnWhite {

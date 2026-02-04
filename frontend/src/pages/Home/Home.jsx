@@ -12,7 +12,6 @@ function Home() {
             </section>
 
             <div className={styles.blockWithBackground}>
-
                 <section className={styles.steps}>
                     <h2>¿Cómo funciona?</h2>
                     <div className={styles.stepsGrid}>
@@ -55,8 +54,8 @@ function Home() {
             </div>
 
             <section className={styles.finalCTA}>
-                <h2>¿Listo para jugar?</h2>
-                <Link to="/login" className={styles.ctaBtn}>Iniciar sesión</Link>
+                <h2 className={styles.finalCTA}>¿Listo para jugar?</h2>
+                <Link to="/login" className={styles.ctaBtn2}>Iniciar sesión</Link>
             </section>
 
         </div>

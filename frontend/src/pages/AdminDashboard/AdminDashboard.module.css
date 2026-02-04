@@ -1,0 +1,65 @@
+/* LAYOUT GENERAL */
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fa;
+    /* mismo fondo que tu Home */
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(to bottom, #2c3457, #1f253d);
+    /* tu azul oscuro */
+    color: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* LINKS DEL SIDEBAR */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.2s;
+    font-weight: 500;
+}
+
+/* HOVER CON TU VERDE */
+.sidebar a:hover {
+    background: rgba(152, 186, 11, 0.25);
+    /* verde translúcido */
+    transform: translateX(4px);
+}
+
+/* CONTENIDO */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+/* TITULOS DE PAGINA */
+.content h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2c3457;
+    /* azul oscuro */
+    margin-bottom: 20px;
+}

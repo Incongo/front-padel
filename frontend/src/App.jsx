@@ -10,6 +10,10 @@ import Layout from "./components/Layout";
 import PublicRoute from "./components/PublicRoute";
 import Home from "./pages/Home/Home";
 
+import AdminHome from "./pages/AdminDashboard/AdminHome";
+import AdminUsers from "./pages/AdminDashboard/AdminUsers";
+import AdminPistas from "./pages/AdminDashboard/AdminPistas";
+import AdminReservas from "./pages/AdminDashboard/AdminReservas";
 
 function App() {
   return (
@@ -30,7 +34,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* USUARIO CON LAYOUT */}
+        {/* USUARIO */}
         <Route
           path="/user"
           element={
@@ -44,7 +48,7 @@ function App() {
           <Route path="mis-reservas" element={<MisReservas />} />
         </Route>
 
-        {/* ADMIN */}
+        {/* ADMIN CON LAYOUT Y RUTAS INTERNAS */}
         <Route
           path="/admin"
           element={
@@ -52,10 +56,14 @@ function App() {
               <AdminDashboard />
             </RoleRoute>
           }
-        />
+        >
+          <Route index element={<AdminHome />} />
+          <Route path="usuarios" element={<AdminUsers />} />
+          <Route path="pistas" element={<AdminPistas />} />
+          <Route path="reservas" element={<AdminReservas />} />
+        </Route>
 
       </Routes>
-
     </BrowserRouter>
   );
 }
