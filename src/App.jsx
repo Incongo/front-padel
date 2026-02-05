@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
@@ -18,7 +18,7 @@ import AdminHorarios from "./pages/AdminDashboard/AdminHorarios";
 
 function App() {
   return (
-    <BrowserRouter basename="/front-padel">
+    <HashRouter>
       <Routes>
 
         {/* HOME PÚBLICA */}
@@ -49,7 +49,7 @@ function App() {
           <Route path="mis-reservas" element={<MisReservas />} />
         </Route>
 
-        {/* ADMIN CON LAYOUT Y RUTAS INTERNAS */}
+        {/* ADMIN */}
         <Route
           path="/admin"
           element={
@@ -66,7 +66,7 @@ function App() {
         </Route>
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
