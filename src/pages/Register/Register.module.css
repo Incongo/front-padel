@@ -136,3 +136,15 @@ button:disabled {
 .loginText a:hover {
     text-decoration: underline;
 }
+
+.linkA {
+    color: #0d6efd;
+    /* azul típico de enlace */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.linkA:hover {
+    color: #0a58ca;
+    /* tono más oscuro al pasar el ratón */
+}

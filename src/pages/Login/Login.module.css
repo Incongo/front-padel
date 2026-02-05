@@ -145,3 +145,14 @@ button:disabled {
     font-size: 19px;
     opacity: 0.9;
 }
+
+.linkLike {
+    color: #007bff;
+    /* color típico de enlace */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.linkLike:hover {
+    opacity: 0.8;
+}

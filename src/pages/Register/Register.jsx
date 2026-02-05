@@ -84,7 +84,10 @@ function Register() {
                 </button>
 
                 <p className={styles.loginText}>
-                    ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+                    ¿Ya tienes cuenta?       <span className={styles.linkA} onClick={() => navigate("/login")}
+                    >
+                        Login
+                    </span>
                 </p>
             </form>
         </div>

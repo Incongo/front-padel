@@ -72,7 +72,10 @@ function Login() {
                 </button>
 
                 <p className={styles.registerText}>
-                    ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>
+                    ¿No tienes cuenta? <span className={styles.linkLike} onClick={() => navigate("/register")}
+                    >
+                        Regístrate aquí
+                    </span>
                 </p>
             </form>
         </div>
