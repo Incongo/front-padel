@@ -18,7 +18,7 @@ import AdminHorarios from "./pages/AdminDashboard/AdminHorarios";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/front-padel">
       <Routes>
 
         {/* HOME PÚBLICA */}

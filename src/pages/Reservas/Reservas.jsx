@@ -6,6 +6,7 @@ import {
     getDisponibilidadRequest,
     createReservaRequest,
 } from "../../api/apiClient";
+import pista1 from "../../assets/1.jpg"
 
 function Reservas() {
     const [pistas, setPistas] = useState([]);
@@ -155,16 +156,19 @@ function Reservas() {
             {/* LISTADO DE PISTAS */}
             <div className={styles.listaPistas}>
                 {pistas.map((pista) => {
+
+
                     const libres = disponibilidad[pista.nombre] || [];
                     const horariosFiltrados = filtrarPorFranja(libres);
 
                     return (
                         <div key={pista.id} className={styles.pistaCard}>
                             <img
-                                src={`/src/assets/1.jpg`}
+                                src={pista1}
                                 className={styles.pistaImg}
                                 alt={pista.nombre}
                             />
+
 
                             <div className={styles.pistaInfo}>
                                 <h3>{pista.nombre}</h3>

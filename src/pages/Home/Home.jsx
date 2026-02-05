@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
+import pista1 from "../../assets/1.jpg"
 
 function Home() {
     return (
@@ -34,17 +35,29 @@ function Home() {
                     <h2>Nuestras pistas</h2>
                     <div className={styles.pistasGrid}>
                         <div className={styles.pistaCard}>
-                            <img src="/src/assets/1.jpg" alt="Pista 1" />
+                            <img
+                                src={pista1}
+                                className={styles.pistaImg}
+
+                            />
                             <h3>Pista 1</h3>
                             <p>Césped artificial</p>
                         </div>
                         <div className={styles.pistaCard}>
-                            <img src="/src/assets/1.jpg" alt="Pista 2" />
+                            <img
+                                src={pista1}
+                                className={styles.pistaImg}
+
+                            />
                             <h3>Pista 2</h3>
                             <p>Techada</p>
                         </div>
                         <div className={styles.pistaCard}>
-                            <img src="/src/assets/1.jpg" alt="Pista 3" />
+                            <img
+                                src={pista1}
+                                className={styles.pistaImg}
+
+                            />
                             <h3>Pista 3</h3>
                             <p>Exterior premium</p>
                         </div>
