@@ -3,14 +3,28 @@ import { getReservas } from "./api";
 
 function AdminReservas() {
     const [reservas, setReservas] = useState([]);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         cargarReservas();
     }, []);
 
     async function cargarReservas() {
-        const data = await getReservas();
-        setReservas(data);
+        try {
+            const data = await getReservas();
+            setReservas(data);
+        } catch (err) {
+            setError("Error al cargar reservas");
+        }
+    }
+
+    if (error) {
+        return (
+            <div>
+                <h1>Reservas del sistema</h1>
+                <p style={{ color: "red" }}>{error}</p>
+            </div>
+        );
     }
 
     return (
@@ -23,19 +37,17 @@ function AdminReservas() {
                 <table>
                     <thead>
                         <tr>
-                            <th>Usuario</th>
-                            <th>Pista</th>
-                            <th>Fecha</th>
-                            <th>Hora</th>
+                            {Object.keys(reservas[0]).map((key) => (
+                                <th key={key}>{key}</th>
+                            ))}
                         </tr>
                     </thead>
                     <tbody>
                         {reservas.map((r) => (
-                            <tr key={r.id}>
-                                <td>{r.usuario}</td>
-                                <td>{r.pista}</td>
-                                <td>{r.fecha}</td>
-                                <td>{r.hora}</td>
+                            <tr key={r.id || JSON.stringify(r)}>
+                                {Object.keys(reservas[0]).map((key) => (
+                                    <td key={key}>{String(r[key])}</td>
+                                ))}
                             </tr>
                         ))}
                     </tbody>

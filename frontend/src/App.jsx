@@ -14,6 +14,7 @@ import AdminHome from "./pages/AdminDashboard/AdminHome";
 import AdminUsers from "./pages/AdminDashboard/AdminUsers";
 import AdminPistas from "./pages/AdminDashboard/AdminPistas";
 import AdminReservas from "./pages/AdminDashboard/AdminReservas";
+import AdminHorarios from "./pages/AdminDashboard/AdminHorarios";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route path="usuarios" element={<AdminUsers />} />
           <Route path="pistas" element={<AdminPistas />} />
           <Route path="reservas" element={<AdminReservas />} />
+          <Route path="horarios" element={<AdminHorarios />} />
         </Route>
 
       </Routes>

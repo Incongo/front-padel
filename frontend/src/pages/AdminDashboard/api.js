@@ -43,3 +43,21 @@ export async function getReservas() {
   const res = await fetch(`${API_URL}/reservas`);
   return res.json();
 }
+// ========== HORARIOS ==========
+export async function getHorarios() {
+  const res = await fetch(`${API_URL}/admin/horarios`);
+  return res.json();
+}
+
+export async function crearHorario(data) {
+  const res = await fetch(`${API_URL}/admin/horarios`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function eliminarHorario(id) {
+  await fetch(`${API_URL}/admin/horarios/${id}`, { method: "DELETE" });
+}
