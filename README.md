@@ -1,16 +1,49 @@
-# React + Vite
+🟦 Front Padel — Plataforma de Reservas Deportivas
+Aplicación completa (frontend + backend) para la gestión de pistas, horarios y reservas de pádel.
+Incluye autenticación JWT, roles (usuario/admin), panel de administración, y un frontend moderno con React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Tecnologías utilizadas
+Frontend
+Tecnología	Uso
+React 19	UI y componentes
+React Router DOM 7	Navegación con HashRouter (compatible con GitHub Pages)
+Vite 7	Bundler rápido y moderno
+CSS Modules	Estilos aislados por componente
+gh-pages	Deploy automático a GitHub Pages
 
-Currently, two official plugins are available:
+Backend
+Desarrollado en Python + Flask, con ORM SQLAlchemy, migraciones con Alembic y autenticación JWT.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologías clave
+Tecnología	Uso
+Flask 3	Framework backend
+Flask-JWT-Extended	Autenticación con tokens
+Flask-SQLAlchemy	ORM
+Alembic / Flask-Migrate	Migraciones de base de datos
+flask-cors	CORS para permitir peticiones desde el frontend
+python-dotenv	Variables de entorno
 
-## React Compiler
+🎾 Funcionalidades principales
+Usuario
+Registro e inicio de sesión
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ver disponibilidad de pistas
 
-## Expanding the ESLint configuration
+Filtrar por fecha y franja horaria
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Seleccionar slots consecutivos
+
+Crear reservas
+
+Ver historial de reservas
+
+Administrador
+CRUD de usuarios
+
+CRUD de pistas
+
+CRUD de horarios
+
+Gestión de reservas
+
+Panel de administración completo
