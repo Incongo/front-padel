@@ -7,7 +7,7 @@ import {
     createReservaRequest,
 } from "../../api/apiClient";
 import pista1 from "../../assets/1.jpg"
-
+import { useNavigate } from "react-router-dom";
 
 function Reservas() {
     const [pistas, setPistas] = useState([]);
@@ -22,7 +22,7 @@ function Reservas() {
     const [pistaSeleccionada, setPistaSeleccionada] = useState(null);
     const [slotsSeleccionados, setSlotsSeleccionados] = useState([]);
     const dateInputRef = useRef(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
         getPistasRequest().then(setPistas);
         getHorariosRequest().then(setHorarios);
@@ -110,7 +110,7 @@ function Reservas() {
             setSlotsSeleccionados([]);
             setPistaSeleccionada(null);
 
-            window.location.href = "/user/mis-reservas";
+            navigate("/user/mis-reservas");
 
         } catch (err) {
             alert("Error al reservar: " + err.message);
